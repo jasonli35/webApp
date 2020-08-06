@@ -1,0 +1,105 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item {
+    
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}
+.box{
+    padding: 2em 1em;
+}
+/* Change height change the number of line display*/
+.jobDescription{
+    height: 10.5em;
+    text-overflow: ellipsis;
+     overflow: hidden;
+     padding-bottom: 0px;
+     display:inline-block;
+     margin-right:10px;
+     
+    /* display: -webkit-box;  -webkit-line-clamp: 3;  -webkit-box-orient: vertical; */
+    
+
+}
+#introImg{
+    
+    grid-area: 1/1/4/6;
+    width:100%;
+
+}
+#intro{
+    display: none;
+    width: 100%;
+    position: relative;
+    
+    grid-template-rows: 1fr/2fr/1fr;
+    grid-template-columns: 1fr/4fr/1fr; 
+    
+}
+#introText{
+    grid-area: 2/2/3/5;
+    font-size: 7em;
+    text-align: center;
+    color:rgb(0, 255, 153);
+}
+   
+#jobPicture{
+    width:40em;
+    height: 20em;
+    overflow:hidden;
+}
+#video{
+  display: flex;
+  justify-content: center;
+  
+}
+#detailViewTitle{
+    text-align: center;
+
+}
+
+#grid-container {
+    display: grid;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
+    
+  }
+  #detailViewIntro{
+      padding-left: 6em;
+  }
+  #dV{
+      background-image: url("https://png.pngtree.com/58pic/32/80/21/07658PIC6j07F9tN3THC3_PIC2018.jpg");
+      color: white;
+      
+  }
+  .leftSpace{
+      padding-left:1em;
+  }
+  .para{
+      font-size: 1.3em;
+      font-weight: 600;
+  }
+  #intro-grid-container {
+    display: grid;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    grid-gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "IntroLeft IntroRight";
+    
+  }
