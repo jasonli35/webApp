@@ -79,7 +79,8 @@ img {
     
   }
   #detailViewIntro{
-      padding-left: 6em;
+      padding-left: 0em;
+      padding-top: 5em;
   }
   #dV{
       background-image: url("https://png.pngtree.com/58pic/32/80/21/07658PIC6j07F9tN3THC3_PIC2018.jpg");
@@ -102,4 +103,29 @@ img {
     grid-template-columns: 50% 50%;
     grid-template-areas: "IntroLeft IntroRight";
     
+  }
+
+#introPic{
+    padding: 0.5em 0em 0em 1em;
+    height: 20em;
+    width:  30em;
+}
+#left{
+    height: 21em;
+    overflow: auto;
+    border:3px solid gray;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+  .topSpace{
+      padding-top: 1em;
   }

@@ -78,6 +78,7 @@ function getParameterByName(name, url) {
         var salary = record.fields["Salaries"];
         var medianYearlySalary = record.fields["MYS"];
         var medianHourlySalary = record.fields["MHS"];
+        var unemploymentRate = record.fields["UnRate"];
 
 
         
@@ -95,7 +96,8 @@ function getParameterByName(name, url) {
             outlook,
             salary,
             medianYearlySalary,
-            medianHourlySalary
+            medianHourlySalary,
+            unemploymentRate
 
           )
         );
@@ -114,41 +116,56 @@ function getParameterByName(name, url) {
             outlook,
             salary,
             medianYearlySalary,
-            medianHourlySalary
+            medianHourlySalary,
+            unemploymentRate
 
   ) {
     return `
     <div id="dV">
-    <div style="color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em"> <h2 class="leftSpace">Top career Jobs In Tech Industry</h2></div>
+    <div style="color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left;"> <h2 class="leftSpace">Top career Jobs In Tech Industry</h2>
+    <div class="float-right">
+    <a class="btn btn-primary btn-lg" style="background-color: blue; padding: 0.3em 4.4em; border-color: black; cursor: pointer; font-size: 1.8em;" href="index.html" role="button">Home</a>
+    </div>
+    </div>
     
     
    <div id="intro-grid-container">
    <div id="introLeft">
-    <div id="detailViewIntro"> 
-    <h1>${jobTitle}</h1>
+   ${picture ? `<img id="introPic" src="${picture[0].url}">` : ``}
+    </div>
+    <div id="introRight>
+    <div id="detailViewIntro" style = "padding-top: 0em; padding-left: 0em;"> 
+    <h1 style="font-size: 4em; ">${jobTitle}</h1>
     <h2>Rating: ${rating}/10</h2>
-    <h4>Median Yearly Salary: ${medianYearlySalary}</h2>
-    <h4>Median Hourly Salary: ${medianHourlySalary}</h2>
+    <h4>Median Yearly Salary: $${medianYearlySalary}</h2>
+    <h4>Median Hourly Salary: $${medianHourlySalary}</h2>
+    <h4>Unemployment Rate: ${unemploymentRate}%</h4>
     </div>
-    </div>
-    <div id="introRight>${picture
-       ? `<img id="jobPicture" src="${picture[0].url}" alt="error">` : ``}
+
+    
     </div>
     
   
-    </div>
+  
 
-    <h2 class="leftSpace"> What a ${jobTitle} do?</h2>
+    <h2 class="leftSpace">What a ${jobTitle} do?</h2>
     <div id="grid-container">
-    <div id="left"><p class="leftSpace para">${description}</p></div>
+   
+    <div id="left" class="leftSpace"><p class="leftSpace para">${description}</p> </div>
+  
     <div id="right">
-    
-      ${salary ? `<img id="jobPicture" src="${salary[0].url}">` : ``}
-    
+    ${salary ? `<img id="introPic" src="${salary[0].url}">` : ``}
     </div>
 
     </div>
+    <h2 class="topSpace leftSpace">Qualification:</h2>
+    <p class="leftSpace">${qualification}</p>
+    <h2 class="topSpace leftSpace">Fitting:</h2>
+    <p>${quality}</p>
+    <h2 class="topSpace leftSpace">Career Outlook:</h2>
+    <p>${outlook}</p>
     </div>
+
     
   `;
 };
