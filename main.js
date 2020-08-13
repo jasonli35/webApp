@@ -125,10 +125,13 @@ function getParameterByName(name, url) {
   ) {
     return `
     <div id="dV">
-    <div style="width: 100%; color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left; display: incline;"> <h2 class="leftSpace" style="display: incline;">Top career Jobs In Tech Industry</h2>
-    <div class="float-right" style="display: incline;">
+    <div style=" width: 100%; color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left; "> 
     
-    <a href="index.html" class="btn btn-outline-primary" role="button" aria-pressed="true">Home</a>
+    <h2 class="leftSpace" style="display: incline; ">Top career Jobs In Tech Industry</h2>
+    <a href="index.html" class="btn-outline-primary btn-lg" role="button" aria-pressed="true" style="display:inline;">Home</a>
+    <div class="float-right" >
+    
+    
     </div>
     </div>
     

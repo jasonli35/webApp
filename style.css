@@ -59,14 +59,16 @@ img {
     overflow:hidden;
 }
 #video{
-  display: flex;
-  justify-content: center;
+
+  margin: auto;
+  width: 50%;
+  
+  padding: 10px;
+
+ 
   
 }
-#detailViewTitle{
-    text-align: center;
 
-}
 
 #grid-container {
     display: grid;
@@ -107,8 +109,8 @@ img {
 
 #introPic{
     padding: 0.5em 0em 0em 1em;
-    height: 20em;
-    width:  30em;
+    height: 30em;
+    width:  60em;
 }
 #left{
     height: 21em;
@@ -132,3 +134,9 @@ img {
   .leftSapcePara{
       padding-left: 3em;
   }
+
+  .btn-outline-primary{
+    position: absolute;
+    top: 50px;
+  }
+  
