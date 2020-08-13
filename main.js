@@ -79,6 +79,7 @@ function getParameterByName(name, url) {
         var medianYearlySalary = record.fields["MYS"];
         var medianHourlySalary = record.fields["MHS"];
         var unemploymentRate = record.fields["UnRate"];
+        var fitting = record.fields["quality 2"]
 
 
         
@@ -97,7 +98,8 @@ function getParameterByName(name, url) {
             salary,
             medianYearlySalary,
             medianHourlySalary,
-            unemploymentRate
+            unemploymentRate,
+            fitting
 
           )
         );
@@ -117,14 +119,16 @@ function getParameterByName(name, url) {
             salary,
             medianYearlySalary,
             medianHourlySalary,
-            unemploymentRate
+            unemploymentRate,
+            fitting
 
   ) {
     return `
     <div id="dV">
-    <div style="color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left;"> <h2 class="leftSpace">Top career Jobs In Tech Industry</h2>
-    <div class="float-right">
-    <a class="btn btn-primary btn-lg" style="background-color: blue; padding: 0.3em 4.4em; border-color: black; cursor: pointer; font-size: 1.8em;" href="index.html" role="button">Home</a>
+    <div style="width: 100%; color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left; display: incline;"> <h2 class="leftSpace" style="display: incline;">Top career Jobs In Tech Industry</h2>
+    <div class="float-right" style="display: incline;">
+    
+    <a href="index.html" class="btn btn-outline-primary" role="button" aria-pressed="true">Home</a>
     </div>
     </div>
     
@@ -159,11 +163,13 @@ function getParameterByName(name, url) {
 
     </div>
     <h2 class="topSpace leftSpace">Qualification:</h2>
-    <p class="leftSpace">${qualification}</p>
+    <p class="leftSapcePara">${qualification}</p>
     <h2 class="topSpace leftSpace">Fitting:</h2>
-    <p>${quality}</p>
+    
+    <div class="leftSapcePara">${quality}</div>
+
     <h2 class="topSpace leftSpace">Career Outlook:</h2>
-    <p>${outlook}</p>
+    <p class="leftSapcePara">${outlook}</p>
     </div>
 
     
