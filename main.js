@@ -23,14 +23,16 @@ function getParameterByName(name, url) {
           var jobTitle = record.fields["Job"];
           var jobDescription = record.fields["Description"];
           var rating =record.fields["Rating"];
-          html.push(listView(id, picture, jobTitle, jobDescription,rating));
+          var medianHourlySalary = record.fields["MHS"];
+        var unemploymentRate = record.fields["UnRate"];
+          html.push(listView(id, picture, jobTitle, jobDescription,rating, medianHourlySalary, unemploymentRate));
         });
         $(".list-view").append(html);
       }
     );
   };
 
-  var listView = function(id, picture, jobTitle, jobDescription ,rating) {
+  var listView = function(id, picture, jobTitle, jobDescription ,rating,medianHourlySalary, unemploymentRate) {
     return `
       
    
@@ -51,10 +53,12 @@ function getParameterByName(name, url) {
 
     </div>
     <div class="col">
-      <h3>Rating</h3>
+      <h3>Rating:</h3>
       
-      <p>${"⭐️".repeat(rating)} </p>
-      <p>${rating}/10</p>
+      <h4>${"⭐️".repeat(rating)} </h4>
+      <h4>${rating}/10</h4>
+      <h5>Median Hourly Salary: $${medianHourlySalary}</h5>
+    <h5>Unemployment Rate: ${unemploymentRate}%</h5>
     </div>
   </div>
 </div>
@@ -99,7 +103,8 @@ function getParameterByName(name, url) {
             medianYearlySalary,
             medianHourlySalary,
             unemploymentRate,
-            fitting
+            fitting,
+            formattedString
 
           )
         );
@@ -107,6 +112,10 @@ function getParameterByName(name, url) {
       }
     );
   };
+  
+  function formattedString(value) {
+    return value.split("+").join("<li>");
+  }
 
   var detailView = function(
             jobTitle,
@@ -122,17 +131,20 @@ function getParameterByName(name, url) {
             unemploymentRate,
             fitting
 
-  ) {
+  ) 
+  
+  {
     return `
     <div id="dV">
-    <div style=" width: 100%; color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left; "> 
+    <div style=" width: 100%; color: white; background-color: black; padding-top:0em; padding-bottom: 0.5em; float: left;"> 
     
-    <h2 class="leftSpace" style="display: incline; ">Top career Jobs In Tech Industry</h2>
-    <a href="index.html" class="btn-outline-primary btn-lg" role="button" aria-pressed="true" style="display:inline;">Home</a>
-    <div class="float-right" >
+
+    <h2 class="leftSpace" style=" display: inline;">Top career Jobs In Tech Industry</h2>
+    <a href="index.html" class="btn-outline-primary btn-lg" role="button" aria-pressed="true" style="display: inline;padding-bottom: 0em;padding-top: 0em; top: 25px;left: 1650px; font-size: 2em">Home</a>
     
     
-    </div>
+    
+    
     </div>
     
     
@@ -143,10 +155,12 @@ function getParameterByName(name, url) {
     <div id="introRight>
     <div id="detailViewIntro" style = "padding-top: 0em; padding-left: 0em;"> 
     <h1 style="font-size: 4em; ">${jobTitle}</h1>
-    <h2>Rating: ${rating}/10</h2>
-    <h4>Median Yearly Salary: $${medianYearlySalary}</h2>
-    <h4>Median Hourly Salary: $${medianHourlySalary}</h2>
-    <h4>Unemployment Rate: ${unemploymentRate}%</h4>
+    
+    <h2 style="font-size: 3.5em; ">Rating: ${rating}/10</h2>
+    <h4 class="threeEmFront">Median Yearly Salary: $${medianYearlySalary}</h2>
+    <h4 class="threeEmFront">Median Hourly Salary: $${medianHourlySalary}</h2>
+    <h4 class="threeEmFront">Unemployment Rate: ${unemploymentRate}%</h4>
+    
     </div>
 
     
@@ -166,15 +180,16 @@ function getParameterByName(name, url) {
 
     </div>
     <h2 class="topSpace leftSpace">Qualification:</h2>
-    <p class="leftSapcePara">${qualification}</p>
+    <p class="leftSapcePara para">${qualification}</p>
     <h2 class="topSpace leftSpace">Fitting:</h2>
     
-    <div class="leftSapcePara">${quality}</div>
+    <div class="leftSapcePara para"><ol>${formattedString(quality)}</ol></div>
 
     <h2 class="topSpace leftSpace">Career Outlook:</h2>
-    <p class="leftSapcePara">${outlook}</p>
+    <p class="leftSapcePara para">${outlook}</p>
+    <br><br><br>
     </div>
-
+   
     
   `;
 };

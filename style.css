@@ -109,11 +109,11 @@ img {
 
 #introPic{
     padding: 0.5em 0em 0em 1em;
-    height: 30em;
+    height: 28em;
     width:  60em;
 }
 #left{
-    height: 21em;
+    height: 28em;
     overflow: auto;
     border:3px solid gray;
 }
@@ -139,4 +139,6 @@ img {
     position: absolute;
     top: 50px;
   }
-  
+  .threeEmFront{
+      font-size: 2.5em;
+  }
